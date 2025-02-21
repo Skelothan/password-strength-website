@@ -12,7 +12,7 @@
 
                 <p>Most password advice you're used to seeing is decades old. In the years since, the bad guys have gotten a lot better at trying to "crack" a stolen password.</p>
 
-                <p>Let's take a trip through a bunch of password styles and see how strong (or weak) they are. Each pixel will represent one second* of effort spent by the bad guys.</p>
+                <p>Let's take a trip through a bunch of password styles and see how strong (or weak) they are. Each pixel in a bar will represent one second* of time spent by the bad guys trying to guess your password before they get it for sure.</p>
 
                 <p class="footnote">*Assuming a single RTX-4090 graphics card cracking PostgreSQL SCRAM-SHA-256 hashes.</p>
 
@@ -29,7 +29,7 @@
 
                 <p>It turns out choosing things we'll remember is hard, so we often pick common things like "password" or "123456" or "football" as passwords. Unfortunately, a lot of people do this. Our bad guys happen to have a list of these commonly-used passwords, so the first thing they'll try is to guess all of them in order.</p>
 
-                <p>[INSERT CHART HERE: X% of passwords are on the rockyou list</p>
+                <p>[INSERT CHART HERE: what % of passwords are on the rockyou list?]</p>
 
                 <p>Clearly, this won't stop the bad guys from breaking in. Let's choose a more uncommon word...</p>
             </div>
@@ -74,9 +74,9 @@
 
                 <p>I should probably explain why the hackers don't already have our password if they broke in. Our password is encrypted before being stored on the website. It's done in such a way that it can't be decrypted, so the only way to find out the password is to encrypt a word and see if it matches. This is also how they know it's you when you log in — the word you gave them, when encrypted, matches their file.</p>
 
-                <p>[Include graphic]</p>
+                <p>[Include infographic: hackers steal the database with various records, then start guessing passwords]</p>
 
-                <p>Let's try to outdo a common password. Numbers seemed to help, so lets add more of them.</p>
+                <p>We wanted to do better than our common password, so let's try that. Numbers seemed to help, so lets add more of them.</p>
             </div>
 
             <div class="block">
@@ -142,6 +142,12 @@
                 <div class="big-chart-bar" style="width:calc(24 * 60 * 1156590843327px + 60 * 14px + 37px); height:60px"></div>
 
                 <h4>Time taken: 3.1 billion years</h4>
+
+                <p>[Multiple text boxes should be found as the user scrolls right. They should describe why this scheme is so much stronger than the previous versions while still being easy to remember. Another (infographic?) should explain how to use dice to create these passwords.]</p>
+
+                <p>[This part should also describe how dangerously misleading the usual login screen is, and especially password length limits. Web developers should not write this on their login pages and should instead let (or make) users submit something really long.]</p>
+
+                <p>[A paragraph on password managers might be appropriate too.]</p>
 
                 
             </div>
