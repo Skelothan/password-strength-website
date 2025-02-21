@@ -4,10 +4,150 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <h1>How strong is your password?</h1>
-        <h2>Scroll →</h2>
+        
         <div class="wrapper">
-            <div class="big-chart">
+            <div class="block">
+                <h1>How strong is your password?</h1>
+                <h2>Probably not strong enough.</h2>
+
+                <p>Most password advice you're used to seeing is decades old. In the years since, the bad guys have gotten a lot better at trying to "crack" a stolen password.</p>
+
+                <p>Let's take a trip through a bunch of password styles and see how strong (or weak) they are. Each pixel will represent one second* of effort spent by the bad guys.</p>
+
+                <p class="footnote">*Assuming a single RTX-4090 graphics card cracking PostgreSQL SCRAM-SHA-256 hashes.</p>
+
+                <h3>Scroll →</h3>
+            </div>
+
+            <div class="block">
+                <h3>A very common password (rockyou.txt)</h3>
+
+                <p class="example-password">123456</p>
+                <div class="big-chart-bar" style="width:1px; height:6px"></div>
+
+                <h4>Time taken: 6 seconds</h4>
+
+                <p>It turns out choosing things we'll remember is hard, so we often pick common things like "password" or "123456" or "football" as passwords. Unfortunately, a lot of people do this. Our bad guys happen to have a list of these commonly-used passwords, so the first thing they'll try is to guess all of them in order.</p>
+
+                <p>[INSERT CHART HERE: X% of passwords are on the rockyou list</p>
+
+                <p>Clearly, this won't stop the bad guys from breaking in. Let's choose a more uncommon word...</p>
+            </div>
+
+            <div class="block">
+                <h3>A random word from the Oxford English Dictionary</h3>
+
+                <p class="example-password">texturizing</p>
+                <div class="big-chart-bar" style="width:0px; height:0px"></div>
+
+                <h4>Time taken: 0.3 seconds</h4>
+
+                <p>The OED, that's a large and well respected dictionary. And this is a long word, so it should be better, right? Well, not exactly.</p>
+
+                <p>They say to make sure your password is at least 8 characters long. This is good advice, but our bad guys aren't going to waste time guessing every possible combination of 8 letters. Surely the password is a <i>word</i>, right? So they'll grab a list of English words and guess each one in order too. Unfortunately, it doesn't take much time to go through the Oxford dictionary either.</p>
+
+                <p>Those password entry forms always tell us to add capital letters too. Let's try that!</p>
+            </div>
+
+            <div class="block">
+                <h3>A random word from the Oxford English Dictionary, capitalized</h3>
+
+                <p class="example-password">Texturizing</p>
+                <div class="big-chart-bar" style="width:1px; height:1px"></div>
+
+                <h4>Time taken: 0.6 seconds</h4>
+
+                <p>We need to make sure we can remember our password as we make it stronger. It'll be easiest to remember where the capital letter is if we make it the first one. But considering how fast the bad guys got through the earlier dictionary, this won't slow them down much. They just have to guess each capitalized word right after the original version.</p>
+
+                <p>The website asked for a number, too. Let's add one...</p>
+            </div>
+
+            <div class="block">
+                <h3>A random word from the dictionary, capitalized, with a number at the end</h3>
+
+                <p class="example-password">Texturizing6</p>
+                <div class="big-chart-bar" style="width:1px; height:6px"></div>
+
+                <h4>Time taken: 6 seconds</h4>
+
+                <p>The digit helped a lot more. We're back at where we were with the common password list.</p>
+
+                <p>I should probably explain why the hackers don't already have our password if they broke in. Our password is encrypted before being stored on the website. It's done in such a way that it can't be decrypted, so the only way to find out the password is to encrypt a word and see if it matches. This is also how they know it's you when you log in — the word you gave them, when encrypted, matches their file.</p>
+
+                <p>[Include graphic]</p>
+
+                <p>Let's try to outdo a common password. Numbers seemed to help, so lets add more of them.</p>
+            </div>
+
+            <div class="block">
+                <h3>A random word from the dictionary, capitalized, with a number at the end and another inside the word</h3>
+
+                <p class="example-password">Textur1zing6</p>
+                <div class="big-chart-bar" style="width:4px; height:10px"></div><div class="big-chart-bar" style="width:1px; height:7px"></div>
+
+                <h4>Time taken: 47 seconds</h4>
+
+                <p>Aha, we can replace the "i"s with "1"s or "e" with "3". That's clever, right?</p>
+
+                <p>It does seem to help, but clever as it seems, the bad guys are also clever and will try these too. More numbers, then?</p>
+
+                <p class="footnote">Note: the exact amount of time this buys us will depend on the word we use. The more letters that look like numbers, the more things the bad guys have to try.</p>
+            </div>
+
+            <div class="block">
+                <h3>A random word from the dictionary, capitalized, with four numbers at the end and another inside the word</h3>
+
+                <p class="example-password">Textur1zing1996</p>
+                <div class="big-chart-bar" style="width:7px; height:60px"></div><div class="big-chart-bar" style="width:1px; height:50px"></div>
+
+                <h4>Time taken: 7 minutes, 50 seconds</h4>
+
+                <p>As long as it's not your birth year, a four-number string will be good. Of course, the hackers probably got a lot of other things along with your encrypted password, including your name and date of birth. They can easily program their computer to try your birthday on the end of the word too.</p>
+
+                <p>Adding more numbers might be too much to remember. But the website's asking for a special character now. We can do that</p>
+            </div>
+
+            <div class="block">
+                <h3>A random word from the dictionary, capitalized, with four numbers at the end and another inside the word, and a special character</h3>
+
+                <p class="example-password">Textur1zing1996*</p>
+                <div class="big-chart-bar" class="hour" style="width:62px; height:60px"></div><div class="big-chart-bar" style="width:1px; height:41px"></div>
+
+                <h4>Time taken: 1 hour, 2 minutes, 41 seconds</h4>
+
+                <p>What counts as a "special character" anyway? I'm going with <code>!@#$%^&*</code> — just 8 characters, but every website will agree that they're special. The more kinds of special characters allowed, the more time adding one buys us.</p>
+
+                <p>We could keep adding more special characters and numbers to this, but at this rate we're never going to remember our final password. We need a different approach.</p>
+            </div>
+
+            <div class="block">
+                <h3>A random string of 6 lowercase and uppercase letters, numbers, and special characters</h3>
+
+                <p class="example-password">!6!Tx%</p>
+                <div class="big-chart-bar" style="width:calc(60 * 14px + 46px); height:60px"></div><div class="big-chart-bar" style="width:1px; height:19px"></div>
+
+                <h4>Time taken: 14 hour, 46 minutes, 19 seconds</h4>
+
+                <p>That number and special character advice from earlier makes a lot more sense if we allow ourselves to use random gobbledygook as a password. To guess this, the bad guys can't use the dictionary as a starting place, so they'd have to try every single six-character string in existence.</p>
+
+                <p>And to think: if we went longer, we could do even better than this! But something like this is pretty impossible to remember. Writing down passwords is probably a bad idea in case someone finds it and reads it, so we don't want to do that either.</p>
+
+                <p>Luckily, there's a way to make a password that's both strong <em>and</em> easy to remember. I'll show you...</p>
+            </div>
+
+            <div class="block">
+                <h3>Six words from <a href="https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt">this list</a></h3>
+
+                <p class="example-password">Backache Outclass Drizzle Five Tapestry Cover</p>
+                <div class="big-chart-bar" style="width:calc(24 * 60 * 1156590843327px + 60 * 14px + 37px); height:60px"></div>
+
+                <h4>Time taken: 3.1 billion years</h4>
+
+                
+            </div>
+
+
+            <!-- <div class="big-chart">
                 <div class="big-chart-bar-wrapper">
                     <div class="big-chart-label-before">1 word, all lowercase</div>
                     <div class="big-chart-bar" style="width:.0015px;"></div>
@@ -56,10 +196,10 @@
                     <div class="big-chart-label-after">Backache Outclass Drizzle Five Tapestry Cover</div>
                 </div>
                 
-            </div>
-            <div class="scale">
+            </div> -->
+            <!-- <div class="scale">
                 &nbsp;
-            </div>
+            </div> -->
         </div>
     </body>
 </html>

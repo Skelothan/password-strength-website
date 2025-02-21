@@ -1,6 +1,27 @@
+body {
+    font-family: "Fira Sans", sans-serif;
+}
+
 .wrapper {
     width: fit-content; 
+    text-wrap: nowrap;
 }
+
+.block {
+    display: inline-block;
+    margin: 0 5em 0;
+    text-wrap: wrap;
+}
+
+.block p {
+    width: 40em;
+}
+
+h2 {
+    font-weight: 300;
+    font-style: italic;
+}
+
 .big-chart {
     width: fit-content;  
 }
