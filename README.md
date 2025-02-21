@@ -1,6 +1,6 @@
 # Final Project Part 2
 
-### [Draft website](index.html)
+### [Draft website](https://skelothan.github.io/password-strength-website/)
 
 ### [User research protocol](User_research_protocol.md) 
 
