@@ -2,7 +2,7 @@
 
 I did not interview anyone for Part 2 particularly formally — I didn't have enough completed soon enough to do so. I'll provide a summary of the in-class critique I received.
 
-### In-class critique results
+## In-class critique results
 At this stage, I only had one chart created — a basic bar chart version of the general password strength data. It was measured in entropy, rather than estimated time.
 
 ### Interviewed:
