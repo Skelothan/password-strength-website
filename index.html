@@ -14,9 +14,10 @@
 
                 <p>Let's take a trip through a bunch of password styles and see how strong (or weak) they are. Each pixel in a bar will represent one second* of time spent by the bad guys trying to guess your password before they get it for sure.</p>
 
-                <p class="footnote">*Assuming a single RTX-4090 graphics card cracking PostgreSQL SCRAM-SHA-256 hashes.</p>
-
                 <h3>Scroll →</h3>
+
+                <p class="footnote">*Assuming a single RTX-4090 graphics card cracking PostgreSQL SCRAM-SHA-256 hashes.<br>In other words, the good guys have pretty strong encryption, but the bad guys have a decently strong machine guessing passwords.</p>
+
             </div>
 
             <div class="block">
@@ -126,7 +127,7 @@
                 <p class="example-password">!6!Tx%</p>
                 <div class="big-chart-bar" style="width:calc(60 * 14px + 46px); height:60px"></div><div class="big-chart-bar" style="width:1px; height:19px"></div>
 
-                <h4>Time taken: 14 hour, 46 minutes, 19 seconds</h4>
+                <h4>Time taken: 14 hours, 46 minutes, 19 seconds</h4>
 
                 <p>That number and special character advice from earlier makes a lot more sense if we allow ourselves to use random gobbledygook as a password. To guess this, the bad guys can't use the dictionary as a starting place, so they'd have to try every single six-character string in existence.</p>
 
@@ -136,20 +137,77 @@
             </div>
 
             <div class="block">
-                <h3>Six words from <a href="https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt">this list</a></h3>
+                <h3 class="long-block-title">Six words from <a href="https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt">this list</a></h3>
 
-                <p class="example-password">Backache Outclass Drizzle Five Tapestry Cover</p>
+                <p class="example-password long-block-title">Backache Outclass Drizzle Five Tapestry Cover</p>
                 <div class="big-chart-bar" style="width:calc(24 * 60 * 1156590843327px + 60 * 14px + 37px); height:60px"></div>
 
                 <h4>Time taken: 3.1 billion years</h4>
 
-                <p>[Multiple text boxes should be found as the user scrolls right. They should describe why this scheme is so much stronger than the previous versions while still being easy to remember. Another (infographic?) should explain how to use dice to create these passwords.]</p>
+                <div class="inner-wrapper">
+                    <h3>Scroll →</h3>
 
-                <p>[This part should also describe how dangerously misleading the usual login screen is, and especially password length limits. Web developers should not write this on their login pages and should instead let (or make) users submit something really long.]</p>
+                    <div style="left:10080px">
+                       <p>That was one week just now. Each big tick mark down there is one day.</p>
+                    </div>
 
-                <p>[A paragraph on password managers might be appropriate too.]</p>
+                    <div style="left:20160px">
+                        <p>Two weeks. Take a look at your scroll bar. Hasn't moved, has it?</p>
+                    </div>
 
-                
+                    <div style="left:30240px">
+                        <p>When we want to make our password stronger, we need to make the bad guys guess as many things as possible. It just turns out that, even on the short list of words, there are more words to guess than there are possible numbers.</p>
+
+                        <p>Since it's more than one word, these are called "passphrases".</p>
+                    </div>
+
+                    <div style="left:40320px">
+                        <p>And, since words are easier to remember than numbers, it's way easier to remember six words than a bunch of numbers or special characters.</p>
+                    </div>
+
+                    <div style="left:50400px">
+                        <p>Unfortunately, that makes forms like this <strong>dangerous</strong>. Requiring numbers and special characters suggests this helps make the password stronger, even though a second word would do so much more.</p>
+                        <form>
+                            <label>New Password</label>
+                            <input type="password" value="C0rrect1ons83%">
+                            <p>Password must contain: an uppercase letter, a lowercase letter, <strong>a number, and a special character.</strong></p>
+                        </form>
+                    </div>
+
+                    <div style="left:60480px">
+                        <p>Even worse, some forms won't let you put in a long password! If you run into these, it's better to use a random gobbledygook password like from earlier, and lock it in a password manager using a six-word phrase. I recommend <a href="https://bitwarden.com/">Bitwarden</a>. Go as long as possible with those.</p>
+                        <form>
+                            <label>New Password</label>
+                            <input type="password" value="C0rrect1ons83%">
+                            <p>Password must contain: an uppercase letter, a lowercase letter, a number, and a special character.</p>
+                            <p><strong>Password must be between 8 and 16 characters long.</strong></p>
+                        </form>
+
+                        <p>For the web application devs out there, you should use a password system that lets your users make strong passphrases. (Or, better yet, forces them to.)</p>
+                    </div>
+
+                    <div style="left:70560px">
+                        <p>Making a passphrase from the list above is easy!<br>All you need is a six-sided die and a pen.</p>
+
+                        <ol>
+                            <li>Get a pen and a sheet of paper</li>
+                            <li>Roll your die five times, writing down the results in order.<br>For example, you might roll and then write down: <span class="handwriting">23635</span></span></li>
+                            <li>Look up the word in the list that corresponds to the numbers you rolled. Write that word down as well<br>Continuing the example, the word corresponding to <span class="handwriting">23635</span> is "Domelike".</li>
+                            <li>Repeat steps 2 and 3 until you have six words. Those six words are your new passphrase.</li>
+                            <li>If the password form still requires a number and special character, you can tack them onto the end of your passphrase.</li>
+                            <li>Once you've memorized the passphrase or written it in your password manager, shred the paper. (Or burn it, if you're feeling fiery)</li>
+                        </ol>
+                    </div>
+
+                    <div style="left:80640px">
+                        <p>Anyway, you've scrolled about two months so far. Which is not much compared to 3.1 billion years.</p>
+                        <p>I don't have much else to say, but you can keep scrolling if you want. But I'd much rather you spend your time making your passwords better! </p>
+                        <p>Good luck out there, and stay safe.</p>
+                    </div>
+                </div>
+
+                <div class="scale">&nbsp;</div>
+
             </div>
 
 
