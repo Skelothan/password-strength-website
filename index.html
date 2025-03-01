@@ -14,27 +14,33 @@
 
                 <p>Let's take a trip through a bunch of password styles and see how strong (or weak) they are. Each pixel in a bar will represent one second* of time spent by the bad guys trying to guess your password before they get it for sure.</p>
 
-                <h3>Scroll →</h3>
+                <p class="scroll">Scroll →</p>
 
                 <p class="footnote">*Assuming a single RTX-4090 graphics card cracking PostgreSQL SCRAM-SHA-256 hashes.<br>In other words, the good guys have pretty strong encryption, but the bad guys have a decently strong machine guessing passwords.</p>
 
             </div>
 
             <div class="block">
-                <h3>A very common password (rockyou.txt)</h3>
+                <h3>A very common password (<a href="https://weakpass.com/wordlists/rockyou.txt">rockyou.txt</a>)</h3>
 
                 <p class="example-password">123456</p>
                 <div class="big-chart-bar" style="width:1px; height:6px"></div>
 
                 <h4>Time taken: 6 seconds</h4>
 
-                <p>It turns out choosing things we'll remember is hard, so we often pick common things like "password" or "123456" or "football" as passwords. Unfortunately, a lot of people do this. Our bad guys happen to have a list of these commonly-used passwords, so the first thing they'll try is to guess all of them in order.</p>
+                <div class="inner-wrapper">
+                    <div>
+                        <p>It turns out choosing things we'll remember is hard, so we often pick common things like "password" or "123456" or "football" or "qwerty" as passwords. Unfortunately, a lot of people do this. Our bad guys happen to have a list of these commonly-used passwords, so the first thing they'll try is to guess all of them in order.</p>
 
-                <p>It's a bit like a house robber checking under the doormat or the flowerpot for the key. So many people hide their key there that you can get in really easily with the same check.</p>
+                        <p>It's a bit like a house robber checking under the doormat or the flowerpot for the key. So many people hide their key there that you can get in really easily with the same check.</p>
+                    </div>
 
-                <p>[INSERT CHART HERE: what % of passwords are on the rockyou list?]</p>
+                    <div>
+                        <p>Oh, and this list is only 14 million passwords long (yes, that's a small number). There are even bigger ones with even more words that people have used before on them. So, if your password is the name of a thing you like or based on keys that are next to each other on the keyboard, it's probably on one of those lists. Best to avoid it.</p>
 
-                <p>Clearly, this won't stop the bad guys from breaking in. Let's choose a more uncommon word...</p>
+                        <p>Clearly, this won't stop the bad guys from breaking in. Let's choose a more uncommon word...</p>
+                    </div>
+                </div>
             </div>
 
             <div class="block">
@@ -45,11 +51,28 @@
 
                 <h4>Time taken: 0.3 seconds</h4>
 
-                <p>The OED, that's a large and well respected dictionary. And this is a long word, so it should be better, right? Well, not exactly.</p>
+                <div class="inner-wrapper">
+                    <div>
+                        <p>The OED, that's a large and well respected dictionary. And this is a long word, so it should be better, right? Well, not exactly.</p>
+                    </div>
 
-                <p>They say to make sure your password is at least 8 characters long. This is good advice, but our bad guys aren't going to waste time guessing every possible combination of 8 letters. Surely the password is a <i>word</i>, right? So they'll grab a list of English words and guess each one in order too. Unfortunately, it doesn't take much time to go through the Oxford dictionary either.</p>
+                    <div>
+                        <p>When making accounts, the password form will probably say to make sure your password is at least 8 characters long:</p>
+                
+                        <form>
+                            <label>New Password</label>
+                            <input type="password" value="C0rrect1ons83%">
+                            <p>Password must contain: an uppercase letter, a lowercase letter, a number, and a special character.</p>
+                        </form>
+                        
+                        <p>This isn't bad advice! But our bad guys aren't going to waste time guessing every possible combination of 8 letters. Surely the passwords are <i>words</i>, right? So they'll grab a list of English words and guess each one in order too. Unfortunately, the Oxford dictionary is pretty short compared to the earlier list of passwords, so the bad guys can check all of these really quickly too.</p>
+                    </div>
 
-                <p>Those password entry forms always tell us to add capital letters too. Let's try that!</p>
+                    <div>
+                        <p>There are some ways we can make this stronger. Those password entry forms always tell us to add capital letters too. Let's try that!</p>
+                    </div>
+
+                </div>
             </div>
 
             <div class="block">
@@ -60,9 +83,11 @@
 
                 <h4>Time taken: 0.6 seconds</h4>
 
-                <p>We need to make sure we can remember our password as we make it stronger. It'll be easiest to remember where the capital letter is if we make it the first one. But considering how fast the bad guys got through the earlier dictionary, this won't slow them down much. They just have to guess each capitalized word right after the original version.</p>
+                <p>We need to make sure we can remember our password as we make it stronger. It'll be easiest to remember where the capital letter is if we make it the first one. </p>
+                    
+                <p>But considering how fast the bad guys got through the earlier dictionary, this won't slow them down much. They just have to guess each capitalized word right after the original version. While we could capitalize some other letter, they could guess all of those pretty quickly too, so there's not much point.</p>
 
-                <p>The website asked for a number, too. Let's add one...</p>
+                <p>The form earlier asked for a number, too. Let's add one...</p>
             </div>
 
             <div class="block">
@@ -73,13 +98,27 @@
 
                 <h4>Time taken: 6 seconds</h4>
 
-                <p>The digit helped a lot more. We're back at where we were with the common password list.</p>
+                <div class="inner-wrapper">
+                    <div>
+                        <p>The digit helped a lot more. We're back at where we were with the common password list. Though it's still only 6 seconds, so we can do better.</p>
+                    </div>
 
-                <p>I should probably explain why the hackers don't already have our password if they broke in. Our password is encrypted before being stored on the website. It's done in such a way that it can't be decrypted, so the only way to find out the password is to encrypt a word and see if it matches. This is also how they know it's you when you log in — the word you gave them, when encrypted, matches their file.</p>
+                    <div>
+                        <p>I should probably explain why the hackers don't already have our password if they broke in.</p>
+                        
+                        <p>Our password is encrypted before being stored in the website's database. It's a one-way code, so it can't be decrypted. The only way to find out the password is to encrypt a word and see if it matches. This is also how the website know it's you when you log in: they encrypt the password you typed, then look at what's in the database. If it's a match, they let you in.</p>
 
-                <p>[Include infographic: hackers steal the database with various records, then start guessing passwords]</p>
+                        <img src="images/hash_infographic.png" alt="Infographic showing a password entering a black box, a random string of letters and numbers coming out, and that string being stored in a database.">
 
-                <p>We wanted to do better than our common password, so let's try that. Numbers seemed to help, so lets add more of them.</p>
+                        <p>Our hackers stole this database, but they can't turn the encrypted passwords back into words. The only way for them to figure it out is for them to use a computer to make as many guesses as possible and see if any of them match anyone's accounts. If they figure it out, they can log in and pretend to be you! Or worse, they might try your username and password on other websites to see if it lets them in there too. For this reason, you should also avoid using the same password in multiple places.</p>
+                    </div>
+
+                    <div>
+                        <p>The longer it takes the bad guys to guess your password, the more time we have to log in and change our password. That way, even if they do figure it out, it won't get them in anymore. To use the house analogy again, if you discover that someone's stolen your key, you get the locks changed right away.</p>
+
+                        <p>We wanted to do better than the common password list. Numbers seemed to help, so lets add more of them.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="block">
@@ -92,7 +131,7 @@
 
                 <p>Aha, we can replace the "i"s with "1"s or "e" with "3". That's clever, right?</p>
 
-                <p>It does seem to help, but clever as it seems, the bad guys are also clever and will try these too. More numbers, then?</p>
+                <p>It does seem to help, but clever as it seems, the bad guys are also clever and will tell their computers to try these kinds of tricks too. More numbers, then?</p>
 
                 <p class="footnote">Note: the exact amount of time this buys us will depend on the word we use. The more letters that look like numbers, the more things the bad guys have to try.</p>
             </div>
@@ -107,7 +146,7 @@
 
                 <p>As long as it's not your birth year, a four-number string will be good. Of course, the hackers probably got a lot of other things along with your encrypted password, including your name and date of birth. They can easily program their computer to try your birthday on the end of the word too.</p>
 
-                <p>Adding more numbers might be too much to remember. But the website's asking for a special character now. We can do that</p>
+                <p>Adding more numbers might be too much to remember. But the website's did ask for a special character, too. We can handle a special character as well...</p>
             </div>
 
             <div class="block">
@@ -118,7 +157,7 @@
 
                 <h4>Time taken: 1 hour, 2 minutes, 41 seconds</h4>
 
-                <p>What counts as a "special character" anyway? I'm going with <code>!@#$%^&*</code> — just 8 characters, but every website will agree that they're special. The more kinds of special characters allowed, the more time adding one buys us.</p>
+                <p>What counts as a "special character" anyway? Different websites have different opinions. I'm going with <code>!@#$%^&*</code> — just 8 characters, but every website will agree that they're special. The more kinds of special characters allowed, the more time adding one buys us.</p>
 
                 <p>We could keep adding more special characters and numbers to this, but at this rate we're never going to remember our final password. We need a different approach.</p>
             </div>
@@ -131,11 +170,26 @@
 
                 <h4>Time taken: 14 hours, 46 minutes, 19 seconds</h4>
 
-                <p>That number and special character advice from earlier makes a lot more sense if we allow ourselves to use random gobbledygook as a password. To guess this, the bad guys can't use the dictionary as a starting place, so they'd have to try every single six-character string in existence.</p>
+                <div class="inner-wrapper">
+                    <div>
+                        <p>That number and special character advice from earlier makes a lot more sense if we allow ourselves to use random gobbledygook as a password. To guess this, the bad guys can't use the dictionary as a starting place, so they'd have to try every single combination of six characters.</p>
 
-                <p>And to think: if we went longer, we could do even better than this! But something like this is pretty impossible to remember. Writing down passwords is probably a bad idea in case someone finds it and reads it, so we don't want to do that either.</p>
+                        <p>And to think: if we went longer, we could do even better than this! Going up to 8 characters gets you over 8 years of time before they find your password (unless they get lucky). Not bad!</p>
+                    </div>
 
-                <p>Luckily, there's a way to make a password that's both strong <em>and</em> easy to remember. I'll show you...</p>
+                    <div>
+                        <p>That said, this is for a scenario where the website the hackers broke into had strong encryption. If the website is using a weaker scheme, or if the bad guys buy more computers, they could break this much faster. 8 years could end up being more like 3 hours.</p>
+
+                        <p>We don't know how good the website we're making an account on is, nor do we know how wealthy the hackers are. Better safe than sorry, so we should still try to make something stronger.</p>
+                    </div>
+
+                    <div>
+                        <p>The other issue is that something like this is pretty impossible to remember. Writing down passwords is probably a bad idea in case someone finds it and reads it, so we don't want to do that either.</p>
+                        
+                        <p>Luckily, there's a way to make a password that's both way stronger than this <em>and</em> easy to remember. I'll show you...</p>
+                    </div>
+                </div>
+
             </div>
 
             <div class="block">
@@ -146,8 +200,8 @@
 
                 <h4>Time taken: 3.1 billion years</h4>
 
-                <div class="inner-wrapper">
-                    <h3>Scroll →</h3>
+                <div class="long-inner-wrapper">
+                    <p class="scroll">Scroll →</p>
 
                     <div style="left:10080px">
                        <p>That was one week just now. Each big tick mark down there is one day.</p>
