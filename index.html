@@ -180,11 +180,11 @@
                     <div>
                         <p>That said, this is for a scenario where the website the hackers broke into had strong encryption. If the website is using a weaker scheme, or if the bad guys buy more computers, they could break this much faster. 8 years could end up being more like 3 hours.</p>
 
-                        <p>We don't know how good the website we're making an account on is, nor do we know how wealthy the hackers are. Better safe than sorry, so we should still try to make something stronger.</p>
+                        <p>We don't know how good the website we're making an account on is, nor do we know how wealthy the hackers are. Better safe than sorry, so we should still try to make something stronger. If you choose to go this route, <strong>use at least 16 characters.</strong> That should buy you plenty of time even in the worst-case scenario.</p>
                     </div>
 
                     <div>
-                        <p>The other issue is that something like this is pretty impossible to remember. Writing down passwords is probably a bad idea in case someone finds it and reads it, so we don't want to do that either.</p>
+                        <p>The problem with this type of password is that something like this is pretty impossible to remember. Writing down passwords is also a bad idea in case someone finds it and reads it, so we don't want to do that either.</p>
                         
                         <p>Luckily, there's a way to make a password that's both way stronger than this <em>and</em> easy to remember. I'll show you...</p>
                     </div>
@@ -203,35 +203,36 @@
                 <div class="long-inner-wrapper">
                     <p class="scroll">Scroll →</p>
 
-                    <div style="left:10080px">
+                    <div style="left: calc(10080px * 1);">
                        <p>That was one week just now. Each big tick mark down there is one day.</p>
                     </div>
 
-                    <div style="left:20160px">
+                    <div style="left:calc(10080px * 2);">
                         <p>Two weeks. Take a look at your scroll bar. Hasn't moved, has it?</p>
                     </div>
 
-                    <div style="left:30240px">
-                        <p>When we want to make our password stronger, we need to make the bad guys guess as many things as possible. It just turns out that, even on the short list of words, there are more words to guess than there are possible numbers.</p>
+                    <div style="left:calc(10080px * 3);">
+                        <p>When we want to make our password stronger, we need to make the bad guys guess as many things as possible. It just turns out that, even on this pretty short list of words, there are more words to guess than there are possible numbers.</p>
 
-                        <p>Since it's more than one word, these are called "passphrases".</p>
+                        <p>Since we're using more than one word, these are called "passphrases" as opposed to "passwords".</p>
                     </div>
 
-                    <div style="left:40320px">
+                    <div style="left:calc(10080px * 4);">
                         <p>And, since words are easier to remember than numbers, it's way easier to remember six words than a bunch of numbers or special characters.</p>
                     </div>
 
-                    <div style="left:50400px">
-                        <p>Unfortunately, that makes forms like this <strong>dangerous</strong>. Requiring numbers and special characters suggests this helps make the password stronger, even though a second word would do so much more.</p>
+                    <div style="left:calc(10080px * 5);">
+                        <p>Unfortunately, that makes forms like this not just misleading, but <em>dangerous</em>. Requiring numbers and special characters suggests that they helps make the password stronger, even though a second word would do so much more.</p>
                         <form>
                             <label>New Password</label>
                             <input type="password" value="C0rrect1ons83%">
                             <p>Password must contain: an uppercase letter, a lowercase letter, <strong>a number, and a special character.</strong></p>
                         </form>
+                        <p>And, because the numbers and special characters are hard to remember, that encourages people to use the same password over and over. That's bad! That's what lets the bad guys do more damage once they do get your password.</p>
                     </div>
 
-                    <div style="left:60480px">
-                        <p>Even worse, some forms won't let you put in a long password! If you run into these, it's better to use a random gobbledygook password like from earlier, and lock it in a password manager using a six-word phrase. I recommend <a href="https://bitwarden.com/">Bitwarden</a>. Go as long as possible with those.</p>
+                    <div style="left:calc(10080px * 6);">
+                        <p>Even worse, some forms have character limits that won't let you put in a long password!</p>
                         <form>
                             <label>New Password</label>
                             <input type="password" value="C0rrect1ons83%">
@@ -239,27 +240,64 @@
                             <p><strong>Password must be between 8 and 16 characters long.</strong></p>
                         </form>
 
-                        <p>For the web application devs out there, you should use a password system that lets your users make strong passphrases. (Or, better yet, forces them to.)</p>
+                        <p>For the web application developers out there, you should use a password form (and hash algorithm) that lets your users make strong passphrases. (Or, better yet, forces them to.) That means no character limits!</p>
                     </div>
 
-                    <div style="left:70560px">
-                        <p>Making a passphrase from the list above is easy!<br>All you need is a six-sided die and a pen.</p>
+                    <div style="left:calc(10080px * 7);">
+                        <p>We can solve some of these problems by using a <strong>password manager</strong>. These are computer programs designed to store passwords, which you lock up using an additional password. You can think of them like a safe. As long as you know the safe code, you only need to remember that &mdash; just unlock the safe when you need to get the password for some website.</p>
+                    
+                        <p>This is useful for keeping track of all the accounts you make, and it will let you use gobbledygook passwords for those pesky character limits without needing to remember gobbledygook. You can use a six-word passphrase for the password manager, and that's the only one you'll ever need. (Don't use the one up there, though.)</p>
+
+                        <p>I recommend using <a href="https://bitwarden.com/">Bitwarden</a>. It's completely free, and it has a convenient browser extension that will let you autofill the password on the login screen. It also has a passphrase and password generator built into it.</p>
+                    </div>
+
+                    <div style="left:calc(10080px * 8);">
+                        <p>But what if you want to make your own passphrase by hand? Good news &mdash; It's really easy! All you need is a six-sided die and a pen.</p>
 
                         <ol>
-                            <li>Get a pen and a sheet of paper</li>
+                            <li>Get a pen and a sheet of paper.</li>
                             <li>Roll your die five times, writing down the results in order.<br>For example, you might roll and then write down: <span class="handwriting">23635</span></span></li>
                             <li>Look up the word in the list that corresponds to the numbers you rolled. Write that word down as well<br>Continuing the example, the word corresponding to <span class="handwriting">23635</span> is "Domelike".</li>
                             <li>Repeat steps 2 and 3 until you have six words. Those six words are your new passphrase.</li>
                             <li>If the password form still requires a number and special character, you can tack them onto the end of your passphrase.</li>
-                            <li>Once you've memorized the passphrase or written it in your password manager, shred the paper. (Or burn it, if you're feeling fiery)</li>
+                            <li>Once you've memorized the passphrase or written it in your password manager, shred the paper.</li>
                         </ol>
                     </div>
 
-                    <div style="left:80640px">
-                        <p>Anyway, you've scrolled about two months so far. Which is not much compared to 3.1 billion years.</p>
-                        <p>I don't have much else to say, but you can keep scrolling if you want. But I'd much rather you spend your time making your passwords better! </p>
-                        <p>Good luck out there, and stay safe.</p>
+                    <div style="left:calc(10080px * 9)"";>
+                        <p>Sometimes, you still need to add numbers or a special character. No biggie, just tack them onto the end of one of the words.</p>
+
+                        <p>Sometimes the website won't let you use spaces either. In that case, you can use a special character in place of spaces, and it should be good.</p>
+
+                        <p>If we wanted to do that to the sample password up there, it might look like "Backache-Outclass-Drizzle8-Five-Tapestry-Cover*</p>
                     </div>
+
+                    <div style="left:calc(10080px * 10);">
+                        <p>That list is from the <a href="https://www.eff.org/">Electronic Frontier Foundation</a>, by the way. They're a nonprofit devoted to promoting digital privacy, free speech, and innovation.</p>
+
+                        <p>The original version was called Diceware, and was created by <a href="https://theworld.com/~reinhold/diceware.html">Arnold Reinhold</a>. The EFF's list has slightly longer words than the original, but their words are more common, so they'll be easier to remember. If you want to know more about how they made their list, you can read <a href="https://www.eff.org/dice">their article about it.</a></p>
+                    </div>
+
+                    <div style="left:calc(10080px * 11);">
+                        <p>Another useful tool is this website, <a href="https://haveibeenpwned.com/">Have I Been Pwned</a>*. When a website gets hacked, they collect just the the usernames and email addresses of the affected accounts.</p>
+
+                        <p>You can type in your email and see if your address came up in a recent hack. If it does, time to change that password!</p>
+
+                        <p class="footnote">* "To pwn" is hacker slang for to soundly defeat someone — or to break into their computer.</p>
+                    </div>
+
+                    <div style="left:calc(10080px * 12);">
+                        <p>Anyway, you've scrolled just over three months so far. Which is not much compared to 3.1 billion years.</p>
+                        
+                        <p>The universe is currently thought to be 13.4 billion years, by comparison.</p>
+                    </div>
+
+                    <div style="left:calc(10080px * 13);">
+                        <p>I don't have much else to say, but you can keep scrolling if you want. But I'd much rather you spend your time making your passwords better!</p>
+
+                        <p>Good luck out there, and stay safe!</p>
+                    </div>
+                    
                 </div>
 
                 <div class="scale">&nbsp;</div>
