@@ -2,8 +2,39 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <link rel="stylesheet" type="text/css" href="jsmodal-light.css">
+        <script src="jsmodal-1.0d.min.js"></script>
     </head>
     <body>
+
+        <div class="credits-button-wrapper"><button id="credits-button">Credits</button></div>
+
+        <script>
+            document.getElementById('credits-button').onclick = function() {
+              //alert("Button clicked!");
+              Modal.open({
+                content: "<h3>References</h3>" +
+                "<ul>" + 
+                "<li><a href='https://weakpass.com/wordlists/rockyou.txt'>rockyou.txt</a>, retrieved from <a href='https://weakpass.com/'>Weakpass</a></li>" +
+                "<li><a href='https://gist.github.com/Chick3nman/32e662a5bb63bc4f51b847bb422222fd'>Hashcat v6.2.6 benchmark on the Nvidia RTX 4090</a> by Chick3nman</li>" +
+                "<li><a href='https://www.oed.com/dictionary/texturizing_adj>Oxford English Dictionary</a> for the choice of word `texturizing`</li>" +
+                "<li><a href='https://bitwarden.com/'>Bitwarden</a>'s password generator for the random 6 character password</li>" +
+                "<li><a href='https://www.eff.org/dice'>EFF Diceware lists</a></li>" +
+                "<li><a href='https://haveibeenpwned.com/>Have I Been Pwned</a></li>" +
+                "<li><a href='https://jsmodal.com/index.php'>jsModal</a></li>" +
+                "</ul>" + 
+
+                "<ul>" + 
+                "<li><a href='https://www.unix-ninja.com/p/your_xkcd_passwords_are_pwned'>Your xkcd passwords are pwned</a> by unix-ninja</li>" +
+                "<li><a href='https://mkorostoff.github.io/1-pixel-wealth/'>Wealth shown to scale</a> by Matt Korostoff</li>" +
+                "<li><a href='https://www.joshworth.com/dev/pixelspace/pixelspace_solarsystem.html'>If the Moon Were Only 1 Pixel</a> by Josh Worth</li>" +
+                "<li><a href='https://stackoverflow.com/a/54735613'> Answer to Stackoverflow question: How many attempts per second can a password cracker actually make?</a> by Royce Williams</li>" +
+                "<li>CSO Online: <a href='https://www.csoonline.com/article/569677/what-is-a-dictionary-attack-and-how-you-can-easily-stop-them.html'>What is a dictionary attack? And how you can easily stop them</a> by Dan Swinhoe</li>" +
+                "<li>Computerphile: <a href='https://www.youtube.com/watch?v=7U-RbOKanYs'>Password Cracking</a></li>" +
+                "</ul>"
+              });
+            }
+        </script>
         
         <div class="wrapper">
             <div class="block">
