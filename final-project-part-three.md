@@ -1,3 +1,5 @@
+[Part 1](https://github.com/Skelothan/jhfische-tswd-portfolio/blob/main/final-project-part-one.md) | [Part 2](https://github.com/Skelothan/password-strength-website/blob/part-2-submission/README.md)
+
 # The final data story
 
 ### <a href="https://skelothan.github.io/password-strength-website/">Final Project Link</a>
